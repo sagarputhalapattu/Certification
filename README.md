@@ -29,23 +29,4 @@ A curated list of my certifications showcasing expertise in data science, AI, an
 - [View Certificate](./Cisco%20Certification%20.pdf)
 
 
-from pdf2image import convert_from_path
 
-# File paths for the uploaded PDFs
-pdf_files = [
-    "/mnt/data/_completion_certificate.pdf",
-    "/mnt/data/Cisco Certification .pdf",
-    "/mnt/data/Gen+AI.pdf"
-]
-
-# Output directory for converted images
-output_images = []
-
-# Convert PDFs to images (first page only for simplicity)
-for pdf_file in pdf_files:
-    images = convert_from_path(pdf_file, dpi=300, first_page=1, last_page=1)  # Convert only the first page
-    output_path = pdf_file.replace(".pdf", ".png")  # Save as PNG
-    images[0].save(output_path, "PNG")
-    output_images.append(output_path)
-
-output_images
